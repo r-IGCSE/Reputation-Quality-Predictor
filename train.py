@@ -4,15 +4,15 @@ from transformers import AutoTokenizer, AutoModelForSequenceClassification, Trai
 dataset = load_dataset('json', data_files='data.json', split='train')
 dataset = dataset.train_test_split(test_size=0.2)
 
-tokenizer = AutoTokenizer.from_pretrained("distilbert-base-uncased")
+tokenizer = AutoTokenizer.from_pretrained("chiraglol/r-igcse-reputation-quality-predictor")
 
-def tokenize_function(examples):
+def tokenize_function(examples): 
     return tokenizer(examples["text"], padding="max_length", truncation=True)
 
 tokenized_datasets = dataset.map(tokenize_function, batched=True)
 
 model = AutoModelForSequenceClassification.from_pretrained(
-    "distilbert-base-uncased", 
+    "chiraglol/r-igcse-reputation-quality-predictor", 
     num_labels=1 
 )
 

@@ -9,3 +9,7 @@ wheels/
 # Virtual environments
 .venv
 .env
+
+# ignore training and eval data
+data.json
+eval.json
