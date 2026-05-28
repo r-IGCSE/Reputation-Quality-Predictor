@@ -1,0 +1,18 @@
+# Exclude the git history
+.git
+.gitignore
+
+# Exclude local Python environment
+__pycache__
+*.pyc
+.venv
+venv
+
+# Exclude local secrets and configs
+.env
+docker-compose.override.yml
+
+# Exclude documentation and IDE files
+README.md
+.vscode
+.idea

@@ -1,0 +1,31 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environments
+.venv/
+venv/
+ENV/
+env/
+
+# Environment secrets and local configs
+.env
+.env.*
+!.env.example
+secrets.dev.yaml
+
+# Docker specific
+# Ignore local data persistence from Docker volumes
+data/
+db_data/
+
+# OS specific
+.DS_Store
+Thumbs.db
+
+# IDE specific
+.vscode/
+.idea/
+
+inference_results.json
