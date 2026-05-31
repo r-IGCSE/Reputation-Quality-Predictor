@@ -13,3 +13,6 @@ wheels/
 # ignore training and eval data
 data.json
 eval.json
+
+inference_results.json
+output/
