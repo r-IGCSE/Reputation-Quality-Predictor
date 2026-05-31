@@ -100,12 +100,15 @@ def main():
         
         print(f"Formatted messages: {formatted_input}")
         token_count = get_token_count(formatted_input)
+        decrement = 0
         
-        print(f"Token count: {token_count}")
-        if token_count > 512:
+        while token_count > 512:
+            decrement += 25
+            print(f"Token count: {token_count}")
             print(f"Token count exceeds 512, truncating image content (if any) or question content")
-            formatted_input = format_messages(item.input, image_trim=150, question_trim=400)
+            formatted_input = format_messages(item.input, image_trim=150-decrement, question_trim=400-decrement)
             print(f"Truncated formatted messages: {formatted_input}")
+            token_count = get_token_count(formatted_input)
             
         quality_score = predict_quality(formatted_input)
         
